@@ -21,15 +21,12 @@ function getValidArguments (arguments) {
 }
 
 function concat(arguments, splitWord){
-    let tempArray = arguments
-    let newArray = []
-    for(let i = 0; i < arguments.length; i++){
-        newArray.push(tempArray[i])
-        if(i < arguments.length - 1){
-            newArray.push(splitWord)
-        }
+    let tempArray = arguments.join(splitWord)
+    let sentence = ""
+    for (let i = 0; i < tempArray.length; i++){
+        sentence += tempArray[i]
     }
-    return newArray.join(" ")
+    return sentence
 }
 
 function resultat(){
