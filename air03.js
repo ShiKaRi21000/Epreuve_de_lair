@@ -31,7 +31,6 @@ function comparaison(arguments){
     return uniqueValue
 }
 
-
 function resultat(){
     if(getValidArguments(getArgument())){
         console.log(comparaison(getArgument()))
