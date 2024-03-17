@@ -14,23 +14,33 @@ const isValidArguments = (arguments) => {
     return true
 }
 
-const operation = (array, calculateur) => {
+const soustraction = (array, calculateur) => {
     const newArray = []
     for (let i = 0; i < array.length - 1; i++){
-        if (calculateur[0][0] === "-"){
             newArray.push(parseInt(array[i]) - parseInt(calculateur[0].slice(1)))
         }
-        else if (calculateur[0][0] === "+"){
-            newArray.push(parseInt(array[i]) + parseInt(calculateur[0].slice(1)))
-        }
-    }
     return newArray
 }
 
-const resultat = () => {
+const addition = (array, calculateur) => {
+    const newArray = []
+    for (let i = 0; i < array.length - 1; i++){
+            newArray.push(parseInt(array[i]) + parseInt(calculateur[0].slice(1)))
+        }
+    return newArray
+}
+
+
+
+const resultat = (signe) => {
     if(isValidArguments(getArgument())){
-        console.log(operation(getArgument(), getArgument().slice(-1)))
+        if(signe[0][0] === "+"){
+            return console.log(addition(getArgument(), getArgument().slice(-1)))
+        }
+        else if(signe[0][0] === "-"){
+            return console.log(soustraction(getArgument(), getArgument().slice(-1)))
+        }
     }
 }
 
-resultat()
+resultat(getArgument().slice(-1))
