@@ -7,6 +7,10 @@ const isValidArguments = (arguments) => {
         console.log("Erreur: il faut 2 arguments minimum pour ce programme")
         return false
     }
+    if(!arguments.includes("fusion")){
+        console.log("Erreur: il n'y a pas de fusion pour pouvoir fusionner les 2 listes/tableaux")
+        return false
+    }
     return true
 }
 
