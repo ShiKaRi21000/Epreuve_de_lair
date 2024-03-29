@@ -11,9 +11,9 @@ const isValidArguments = (arguments) => {
 }
 
 const maRotation = (array) => {
-    const newArray = array
-    const tempValue = newArray.shift()
-    newArray.push(tempValue)
+    const oldArray = array
+    const newArray = oldArray.slice(1)
+    newArray.push(oldArray[0])
     return newArray
 }
 
